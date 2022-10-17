@@ -23,6 +23,8 @@ public class TodoMockRepository : IRepository<Todo>
         CachingService = cachingService;
     }
 
+    //TODO: add the caching to a decorator class
+
     public async Task<Todo?> GetById(Guid id)
     {
         var cachedTodo = await CachingService.GetAsync(id.ToString());
